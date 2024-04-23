@@ -161,10 +161,10 @@ def currency_detection():
     if c_img is None:
         announcer("Please Try Again.")
         exit(75)
-    cv2.imshow("img1", c_img);
+    cv2.imshow("img1", c_img)
     cv2.waitKey(0)
     r_img = img_rotation(c_img)
-    cv2.imshow("img1", r_img);
+    cv2.imshow("img1", r_img)
     cv2.waitKey(0)
 
     # cv2.imshow("original", test_img)
