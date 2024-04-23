@@ -129,9 +129,6 @@ def img_rotation(img):
     return Rotated_image
 
 
-#
-
-
 def currency_detection():
     # begin = time.time()
     max_val = 8
@@ -149,12 +146,12 @@ def currency_detection():
         print("Capturing image...")
         ret, frame = capt.read()
         # img1 = cv2.cvtColor(frame,cv2.COLOR_BGR2GRAY)
-        cv2.imwrite("sample111.jpg", frame)
+        cv2.imwrite("sample112.jpg", frame)
         break
     capt.release()
     cv2.destroyAllWindows()
 
-    test_img = cv2.imread('sample111.jpg')
+    test_img = cv2.imread('sample112.jpg')
     cv2.imshow("original", test_img)
     cv2.waitKey(0)
     c_img = cropped_image(test_img)
