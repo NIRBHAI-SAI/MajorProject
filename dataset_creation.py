@@ -32,7 +32,7 @@ def data_creation():
             print(name + " is already present in data please enter a new name, ", end="")
         else:
             users.append(name)
-            with open("Users.csv", "w") as csvfile:
+            with open("faces//Users.csv", "w") as csvfile:
                 writer = csv.writer(csvfile)
                 writer.writerow(users)
             break
