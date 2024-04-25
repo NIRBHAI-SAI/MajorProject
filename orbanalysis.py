@@ -19,7 +19,7 @@ def cropped_image(img):
 
     # find the non-zero min-max coords of canny
     pts = np.argwhere(canny > 0)
-    if(len(pts) == 0):
+    if len(pts) == 0:
         announcer("Image is too Blur, Cannot detect the Currency")
         return
 
@@ -244,4 +244,4 @@ def currency_detection():
     # print(end - begin)
 
 
-currency_detection()
+# currency_detection()

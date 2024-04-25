@@ -1,3 +1,6 @@
+import csv
+
+
 def data_creation():
     import cv2
 
@@ -18,7 +21,22 @@ def data_creation():
 
     cap = cv2.VideoCapture(0)
     count = 0
-    name = input("Enter user name: ")
+    with open("faces//Users.csv", "r") as Csvfile:
+        read = csv.reader(Csvfile)
+        users = next(read)
+        # print(users)
+    while 1:
+        name = input("Enter user name: ").replace(" ","").lower()
+        # print(name)
+        if name in users:
+            print(name + " is already present in data please enter a new name, ", end="")
+        else:
+            users.append(name)
+            with open("Users.csv", "w") as csvfile:
+                writer = csv.writer(csvfile)
+                writer.writerow(users)
+            break
+
 
     file1 = open("id_text", "r")
     value = int(file1.read()) + 1
@@ -56,3 +74,5 @@ def data_creation():
     cap.release()
     cv2.destroyAllWindows()
     print("Collecting Samples Complete")
+
+data_creation()
